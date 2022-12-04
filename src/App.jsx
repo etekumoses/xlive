@@ -7,6 +7,8 @@ import { Adsense } from "@ctrl/react-adsense";
 import ReactGA from "react-ga";
 import Iframe from "react-iframe";
 import { ads } from "./assets";
+import { AdBlockDetectedWrapper } from "adblock-detect-react";
+
 const TRACKING_ID = "G-4P31SHF3RJ"; // OUR_TRACKING_ID
 
 ReactGA.initialize(TRACKING_ID);
@@ -65,11 +67,11 @@ const App = () => {
       </div>
 
       <div className={`bg-primary flex-1`}>
-      <div className="w-full mt-3 ">
-          <img src={ads} alt="ad"  width='100%' />
+        <div className="w-full mt-3 ">
+          <img src={ads} alt="ad" width="100%" />
         </div>
-        <div className="grid grid-cols-6 gap-4 w-full">
-          <div className="text-white bg-primary">
+        <div className=" w-full">
+          {/* <div className="text-white bg-primary">
             <Adsense
               client="ca-pub-8770261708324695"
               slot="2901227363"
@@ -77,16 +79,19 @@ const App = () => {
               layout="in-article"
               format="fluid"
             />
-          </div>
-          <div className="col-start-2 col-span-4 text-white bg-primary aspect-video border">
-            <Iframe
-              url="https://www.ovostreams.com/player1.php"
-              // url="https://givemenbastreams.com/soccer.php"
-              width="100%"
-              height="700px"
-            />
-          </div>
-          <div className="text-white bg-primary">
+          </div> */}
+          <AdBlockDetectedWrapper>
+            <div className=" text-white bg-primary aspect-video border">
+              <Iframe
+                url="https://www.ovostreams.com/player1.php"
+                // url="https://givemenbastreams.com/soccer.php"
+                // url="https://bongstreams.com/rntv.php"
+                width="100%"
+                height="700px"
+              />
+            </div>
+          </AdBlockDetectedWrapper>
+          {/* <div className="text-white bg-primary">
             <Adsense
               client="ca-pub-8770261708324695"
               slot="2901227363"
@@ -94,10 +99,16 @@ const App = () => {
               layout="in-article"
               format="fluid"
             />
-          </div>
+          </div> */}
         </div>
         <div className="w-full mt-3">
-          <img src={ads} alt="ad"  width='100%'/>
+          <Adsense
+            client="ca-pub-8770261708324695"
+            slot="2901227363"
+            className="block"
+            layout="in-article"
+            format="fluid"
+          />
         </div>
         {/* <iframe
           src="https://bongstreams.com/rntv.php"
@@ -135,7 +146,6 @@ const App = () => {
           height="700px"
         /> */}
         ,{/* <img src={card} alt="bg" /> */}
-
       </div>
 
       <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>

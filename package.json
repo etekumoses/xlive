@@ -12,6 +12,7 @@
         "@clappr/player": "^0.4.7",
         "@ctrl/react-adsense": "^1.6.1",
         "@videojs/http-streaming": "^2.15.1",
+        "adblock-detect-react": "^1.1.0",
         "clappr-markers-plugin": "^0.6.3",
         "clappr-playback-rate-plugin": "^0.7.0",
         "react": "^18.2.0",
