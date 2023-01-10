@@ -11,7 +11,7 @@ export const footerLinks = [
     links: [
       {
         name: "Whatsapp",
-        link: "https://wa.me/256701407936",
+        link: "https://wa.me/",
       },
     ],
   },
